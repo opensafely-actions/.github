@@ -2,27 +2,31 @@
 
 This directory houses two JSON files that can be used to import rulesets into
 a repository in the `opensafely-actions` organization.
-It is recommended to apply these rulesets to repositories housing reusable actions
+We recommend you apply these rulesets to repositories housing reusable actions
 within the organization.
 
-### Importing a ruleset into a repository
-A ruleset can be imported into a repository by following these steps:
+## Importing a ruleset into a repository
+
+### Importing the JSON file
+You can import a ruleset into a repository by:
  - Download the appropriate JSON file from this directory
- - In the repo, head to ⚙️Settings > Rules > Rulesets
- - Select New Ruleset > Import a ruleset
- - Browse to the downloaded JSON file and select it
- - Review the imported ruleset, adding further configuration (e.g. status checks) if needed
- - Save your changes!
+ - Follow [the instructions in the GitHub docs for importing a ruleset](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#importing-a-ruleset) 
+ - Review the imported ruleset, adding further configuration (e.g. status checks) if needed (see below)
 
-Here is a video example,courtesy of
-[github's ruleset-recipes repository README](https://github.com/github/ruleset-recipes/blob/main/README.md).
+### Adding required status checks to the ruleset (if applicable)
+The ruleset that protects the default branch requires status checks to pass before merging PRs.
+When the ruleset is imported, you will have to add the required status checks manually in the web UI.
+You can do this via the "Add checks" button under the additional settings for the "Require status checks
+to pass" rule (see the screenshot below).
+![Screenshot showing the "Add checks" dropdown menu in the GitHub web interface for rulesets](add-checks.png)
 
-![Gif walking through the steps outline above to import a ruleset from a JSON file.](https://github.com/github/release-assets/assets/7575792/8806fa8c-b874-4a4e-97ef-4f8c238f4d29)
+Please ensure that you add the required status checks for the repo. If you try to save the ruleset without
+adding any status checks, GitHub will raise an error (see the screenshot below). 
+![Screenshot showing a GitHub error stating that "Required status checks cannot be empty"](error-checks-required.png)
 
+## Rulesets
 
-### Rulesets
-
-#### Protect default branch (`protect-default-branch.json`)
+### Protect default branch (`protect-default-branch.json`)
 This ruleset applies to the default branch of a repository, and offers the following protections:
 - Prevent deletion by users
 - Require a PR before merging
@@ -35,11 +39,7 @@ By ensuring that users work on separate branches prior to merging, users can wor
 features or bug fixes without affecting the default branch, and any conflicting code can be
 resolved in a PR before merging.
 
-When the ruleset is imported, the required status checks will have to be added manually in the web UI.
-Please ensure that this is done. If no status checks are added, an error will be raised by GitHub when
-attempting to save the ruleset.
-
-#### Protect semantically versioned tags (`protect-semantically-versioned-tags.json`)
+### Protect semantically versioned tags (`protect-semantically-versioned-tags.json`)
 This ruleset applies to tags that follow the semantic versioning format (e.g. `v1.0.0`),
 and offers the following protections:
 - Prevent deletion by users
