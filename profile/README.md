@@ -15,18 +15,28 @@ Here, you will find the reusable actions for the platform.
 
 Browse the [available repositories](https://github.com/orgs/opensafely-actions/repositories) to discover reusable actions.
 
-Each action has its own repository containing its code, documentation and version history
+Archived repositories contain deprecated actions - check the action's README before using it.
+
+Each action has its own repository containing its code, documentation and version history.
 
 You can also use GitHub's repository search to find an action by name.
 
 ## Information about an action
 
-Each action's GitHub repository provides information about the action:
+Each action's GitHub repository provides information about the action.
 
-**Description**: The repository's About section provides a short description, while the README contains more detailed information about the action and how to use it.
+### Description
 
-**Contributors**: Find contributors in the repository's Contributors section or under Insights > Contributors.
+The repository's About section provides a short description, while the README contains more detailed information about the action and how to use it.
 
-**Topics**: Topics are labels used to categorise repositories. You can find them in the repository's **About** section and click on a topic to discover other repositories with the same label.
+### Contributors
 
-**Versions**: Find available versions under Releases or Tags.
+Find contributors in the repository's Contributors section or under Insights > Contributors.
+
+### Topics
+
+Topics are labels used to categorise repositories. You can find them in the repository's **About** section and click on a topic to discover other repositories with the same label.
+
+### Versions
+
+Find available versions under **Tags**. Some actions also provide release notes under **Releases**. Use the version tag in your study's `project.yaml` (see [Running reusable actions](https://docs.opensafely.org/actions-reusable/#running-reusable-actions)).
